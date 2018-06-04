@@ -44,7 +44,6 @@ getErrorMessagePwd()
           '';
 }
   constructor() { }
-
   ngOnInit() {
   }
 
