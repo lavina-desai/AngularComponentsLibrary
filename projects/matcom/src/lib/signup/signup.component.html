@@ -6,19 +6,14 @@
    
     <div class="example-container">
       <mat-form-field>
-      <!-- <input matInput placeholder="Enter UserName"   type="text" formControlName="UserName" required> -->
+
       <input matInput placeholder="Enter your UserName" [formControl]="username" required>
       <mat-error *ngIf="username.invalid">{{getErrorMessageUser()}}</mat-error> 
     </mat-form-field>
   
       
       </div>
-      <!-- <div class="example-container">
-          <mat-form-field>
-              <input matInput placeholder="Enter Email"  type="email" formControlName="email" required>
-            
-              </mat-form-field>
-        </div> -->
+
         <div class="example-container">
             <mat-form-field>
               <input matInput placeholder="Enter your email" [formControl]="email" required>
@@ -28,7 +23,7 @@
        
         <div class="example-container">
             <mat-form-field>
-                <!-- <input matInput placeholder="Enter PhoneNumber" type="number" formControlName="phoneNumber" required> -->
+               
                 <input matInput placeholder="Enter your Mobile Number" [formControl]="phoneNumber" type="number" minlength="10" maxlength="10" required>
                 <mat-error *ngIf="phoneNumber.invalid">{{getErrorMessagePhn()}}</mat-error>
                 </mat-form-field>
@@ -36,7 +31,7 @@
   
         <div class="example-container">
             <mat-form-field>
-                <!-- <input matInput placeholder="Enter Password" type="password" formControlName="password" required> -->
+               
                 <input matInput placeholder="Enter your Password" [formControl]="password"  required>
                 <mat-error *ngIf="password.invalid">{{getErrorMessagePwd()}}</mat-error>
                 </mat-form-field>

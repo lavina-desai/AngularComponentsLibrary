@@ -43,8 +43,6 @@ getErrorMessagePwd()
       this.password.hasError('password') ? 'Not a valid password' :
           '';
 }
-
-
   constructor() { }
 
   ngOnInit() {
