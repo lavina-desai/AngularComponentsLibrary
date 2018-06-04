@@ -1,0 +1,37 @@
+
+    <mat-card>
+        <h2>Sign Up</h2>
+        <form [formGroup]="registerForm">
+
+                <mat-form-field>
+                    <input matInput placeholder="Full Name" [formControl]="name" required>
+                 <mat-error *ngIf="name.invalid">{{getErrorMsg()}}</mat-error> 
+                        
+                </mat-form-field>
+
+                <!-- <mat-form-field class="input-field">
+                    <input matInput placeholder="Enter Email" class="FormControl" formControlName="email" autocomplete='false' required>
+                    <mat-error *ngIf="registerForm.controls['email'].hasError('valid')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+
+            <mat-form-field class="input-field">
+                <input matInput placeholder="Enter Password" type="password" class="FormControl" formControlName="pass">
+                <mat-error *ngIf="registerForm.controls['pass'].hasError('required')">
+                    Password <strong>required</strong>
+                </mat-error>
+            </mat-form-field> -->
+            
+            <mat-card-actions>
+                <button color="accent" type="submit" mat-raised-button>Submit</button><br>
+                <!-- <button color="primary" type="button" mat-button [routerLink]="['../signIn']">Back to SignIn</button>
+                <button color="warn" type="button" mat-button [routerLink]="['']">Forgot Password?</button> -->
+            </mat-card-actions>
+
+        </form>
+    </mat-card>

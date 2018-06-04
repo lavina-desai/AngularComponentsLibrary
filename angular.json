@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "matcom": {
+      "root": "projects/matcom",
+      "sourceRoot": "projects/matcom/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/matcom/tsconfig.lib.json",
+            "project": "projects/matcom/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/matcom/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/matcom/src/test.ts",
+            "tsConfig": "projects/matcom/tsconfig.spec.json",
+            "karmaConfig": "projects/matcom/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/matcom/tsconfig.lib.json",
+              "projects/matcom/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "MatComponentsLibrary"
