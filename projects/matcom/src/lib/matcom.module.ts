@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatcomComponent } from './matcom.component';
 import { SignupModule } from './signup/signup.module';
+import { ResetpasswordModule } from './resetpassword/resetpassword.module';
+import { ForgetpasswordModule } from './forgetpassword/forgetpassword.module';
 
 
 
@@ -9,6 +11,6 @@ import { SignupModule } from './signup/signup.module';
     SignupModule,
   ],
   declarations: [MatcomComponent],
-  exports: [MatcomComponent, SignupModule]
+  exports: [MatcomComponent, SignupModule,ResetpasswordModule, ForgetpasswordModule]
 })
 export class MatcomModule { }
