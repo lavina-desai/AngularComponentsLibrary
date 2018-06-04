@@ -36,6 +36,7 @@ getErrorMessagePhn()
       this.phoneNumber.hasError('phoneNumber') ? 'Not a valid Mobile Number' :
           '';
 }
+
 getErrorMessagePwd()
 {
   return this.password.hasError('required') ? 'You must enter a password' :
