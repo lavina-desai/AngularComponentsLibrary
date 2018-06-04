@@ -1,19 +1,26 @@
-<div class="example-container">
-  <form >
-      
-  <mat-form-field>
-    <input matInput placeholder="Enter your email" required>
-    <mat-error>Email Required!</mat-error>
-  </mat-form-field><br>
+<div style="text-align:center">
 
-  <!-- <mat-form-field>
-    <input matInput placeholder="Enter your password" formControlName="password" type="password" required autocomplete='false'>
-    <mat-error *ngIf="password.controls['password'].hasError('required')">
-        Password <strong>required</strong>
-    </mat-error> 
-  </mat-form-field><br> -->
+  <mat-card>
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" nonvalidate>
+      <h1>Signin</h1>
 
-  <button mat-raised-button color="primary" (click)="login()">Submit</button>
-</form>
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter your email" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter your Password" [formControl]="password" required>
+          <mat-error *ngIf="password.invalid">{{getErrorMessagePwd()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button color="primary">Submit</button>
+      <button mat-raised-button color="primary">Register</button>
+    </form>
+  </mat-card>
 
 </div>
