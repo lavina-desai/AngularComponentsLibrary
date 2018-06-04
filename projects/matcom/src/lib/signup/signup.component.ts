@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ FormGroup,FormControl,Validators} from '@angular/forms';
+import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'lib-signup',
@@ -8,20 +8,43 @@ import{ FormGroup,FormControl,Validators} from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  public errorMsg = '';
-  isSubmitted = false;
-  name: string;
-  email: string;
-  password: string;
+    
+form;
 
-  registerForm = new FormGroup({
-    name:new FormControl('',Validators.required),
-    email:new FormControl('', [Validators.required,Validators.email]),
-    pass:new FormControl('',Validators.required)
-  });
+username = new FormControl('', [Validators.required]);
+email = new FormControl('', [Validators.required, Validators.email]);
+phoneNumber  = new FormControl('', [Validators.required,Validators.minLength(10)]);
+password = new FormControl('', [Validators.required]);
 
+//username
+getErrorMessageUser() {
+  return this.username.hasError('required') ? 'You must enter a UserName' :
+      this.username.hasError('username') ? 'Not a valid username' :
+          '';
+}
+//email
+getErrorMessage() {
+  return this.email.hasError('required') ? 'You must enter a valid Email' :
+      this.email.hasError('email') ? 'Not a valid email' :
+          '';
+}
+
+//phnnumber
+getErrorMessagePhn()
+{
+  return this.phoneNumber.hasError('required') ? 'You must enter a phone number' :
+      this.phoneNumber.hasError('phoneNumber') ? 'Not a valid Mobile Number' :
+          '';
+}
+
+getErrorMessagePwd()
+{
+  return this.password.hasError('required') ? 'You must enter a password' :
+      this.password.hasError('password') ? 'Not a valid password' :
+          '';
+}
   constructor() { }
-
+  
   ngOnInit() {
   }
 

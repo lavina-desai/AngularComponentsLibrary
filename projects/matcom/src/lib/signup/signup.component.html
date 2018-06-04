@@ -1,37 +1,42 @@
+<div style="text-align:center">
+  
+    <mat-card> 
+        <form>
+    <h1>Registration</h1>
+   
+    <div class="example-container">
+      <mat-form-field>
+      <input matInput placeholder="Enter your UserName" [formControl]="username" required>
+      <mat-error *ngIf="username.invalid">{{getErrorMessageUser()}}</mat-error> 
+    </mat-form-field>
+      </div>
+      
+        <div class="example-container">
+            <mat-form-field>
+              <input matInput placeholder="Enter your email" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+        <div class="example-container">
+            <mat-form-field>
+               
+                <input matInput placeholder="Enter your Mobile Number" [formControl]="phoneNumber" type="number" minlength="10" maxlength="10" required>
+                <mat-error *ngIf="phoneNumber.invalid">{{getErrorMessagePhn()}}</mat-error>
 
-    <mat-card>
-        <h2>Sign Up</h2>
-        <form [formGroup]="registerForm">
-
-                <mat-form-field>
-                    <input matInput placeholder="Full Name" [formControl]="name" required>
+                </mat-form-field>
+          </div>
+  
+        <div class="example-container">
+            <mat-form-field>
+               
+                <input matInput placeholder="Enter your Password" [formControl]="password"  required>
+                <mat-error *ngIf="password.invalid">{{getErrorMessagePwd()}}</mat-error>
+                </mat-form-field>
+          </div>
     
-                        
-                </mat-form-field>
-
-                <!-- <mat-form-field class="input-field">
-                    <input matInput placeholder="Enter Email" class="FormControl" formControlName="email" autocomplete='false' required>
-                    <mat-error *ngIf="registerForm.controls['email'].hasError('valid')">
-                        Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
-                        Email is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-
-
-            <mat-form-field class="input-field">
-                <input matInput placeholder="Enter Password" type="password" class="FormControl" formControlName="pass">
-                <mat-error *ngIf="registerForm.controls['pass'].hasError('required')">
-                    Password <strong>required</strong>
-                </mat-error>
-            </mat-form-field> -->
-            
-            <mat-card-actions>
-                <button color="accent" type="submit" mat-raised-button>Submit</button><br>
-                <!-- <button color="primary" type="button" mat-button [routerLink]="['../signIn']">Back to SignIn</button>
-                <button color="warn" type="button" mat-button [routerLink]="['']">Forgot Password?</button> -->
-            </mat-card-actions>
-
-        </form>
-    </mat-card>
+          <button mat-raised-button color="primary">Register</button>
+  </form>
+  </mat-card>
+  
+  </div>
+  
