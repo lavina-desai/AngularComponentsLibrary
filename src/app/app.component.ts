@@ -13,6 +13,7 @@ export class AppComponent {
 
   login(eve){
     console.log(eve);
-    console.log("Successfully logged in"); 
+    console.log("Successfully");  
   }
+
 }

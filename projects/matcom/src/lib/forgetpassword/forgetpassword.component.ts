@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -8,19 +8,23 @@ import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 })
 export class ForgetpasswordComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+   @Output() onSubmit = new EventEmitter()
+  email : string;
 
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a valid Email' :
-        this.email.hasError('email') ? 'Not a valid email' :
-            '';
-  }
+forgetpasswordForm =  new FormGroup({
+  Email : new FormControl('', [Validators.required, Validators.email])
+});
 
-  onSubmit(){
-    console.log("Request Sent.")
- }
+constructor() { }
 
-  constructor() { }
+forgetpassword(){
+  if (!this._validateForm()) return
+  this.onSubmit.emit(this.forgetpasswordForm.value)
+}
+
+private _validateForm() {
+return this.forgetpasswordForm.valid
+}
 
   ngOnInit() {
   }

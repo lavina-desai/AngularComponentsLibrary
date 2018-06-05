@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -8,32 +8,27 @@ import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 })
 export class ResetpasswordComponent implements OnInit {
 
-username = new FormControl('', [Validators.required]);
-password = new FormControl('', [Validators.required]);
-confirmpassword = new FormControl('', [Validators.required]);
+  @Output() onSubmit = new EventEmitter()
+  username : string;
+  password : string;
+  confirmpassword : string;
 
-getErrorMessageUser() {
-  return this.username.hasError('required') ? 'You must enter a UserName' :
-      this.username.hasError('username') ? 'Not a valid username' :
-      ''
-}
+resetForm = new FormGroup({
+user : new FormControl('', [Validators.required]),
+pass : new FormControl('', [Validators.required]),
+confirmpass : new FormControl('', [Validators.required])
+});
 
-getErrorMessagepassword() {
-  return this.password.hasError('required') ? 'You must enter a Password' :
-      this.password.hasError('password') ? 'Not a valid Password' :
-      ''
-}
-
-getErrorMessageconfirmpassword() {
-  return this.confirmpassword.hasError('required') ? 'You must enter a Confirm Password' :
-      this.confirmpassword.hasError('confirmpassword') ? 'Not a valid Confirm Password' :
-      ''
-}
-
-onSubmit(){
-   console.log("Password Reset Successfull ..!!")
-}
   constructor() { }
+
+  resetpassword(){
+    if (!this._validateForm()) return
+    this.onSubmit.emit(this.resetForm.value)
+  }
+  
+  private _validateForm() {
+  return this.resetForm.valid
+  }
 
   ngOnInit() {
   }
