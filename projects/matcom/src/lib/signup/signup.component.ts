@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -7,8 +7,14 @@ import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  //model: any = {};
+  // public errorMsg = '';
+  // @Output() onSubmit = new EventEmitter()
+  onSubmit() {
+    console.log(
+    'SUCCESS!! :-)\n\n')
+  }
 
-    
 form;
 
 username = new FormControl('', [Validators.required]);
@@ -43,6 +49,17 @@ getErrorMessagePwd()
       this.password.hasError('password') ? 'Not a valid password' :
           '';
 }
+
+// register(){
+//     if (!this._validateForm()) return
+
+//    this.onSubmit.emit(this.form.value)
+//  }
+
+// private _validateForm() {
+//     return this.form.valid
+//    }
+
   constructor() { }
   
   ngOnInit() {
