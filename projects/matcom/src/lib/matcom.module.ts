@@ -13,10 +13,8 @@ import { SigninModule } from './signin/signin.module';
     SigninModule
   ],
   declarations: [MatcomComponent],
-<<<<<<< HEAD
-  exports: [MatcomComponent, SignupModule,ResetpasswordModule, ForgetpasswordModule]
-=======
-  exports: [MatcomComponent, SignupModule,SigninModule]
->>>>>>> ee98cd11682c4057015dedf5c1360d006a2966ea
+
+  exports: [MatcomComponent, SignupModule,ResetpasswordModule, ForgetpasswordModule,SigninModule]
 })
+
 export class MatcomModule { }
