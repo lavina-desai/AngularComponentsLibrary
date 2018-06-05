@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   register(eve){
+    console.log(eve); 
+    console.log("Successfully Registered");   
+  }
+
+  login(eve){
     console.log(eve);
-    
-    console.log("Successfully Registered");
-    
+    console.log("Successfully logged in"); 
   }
 }
