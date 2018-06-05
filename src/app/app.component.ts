@@ -6,10 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  register(eve){
+  forgetpassword(eve){
     console.log(eve);
-    
-    console.log("Successfully Registered");
-    
+    console.log("Link sent to reset your password.. ");
   }
+
+  resetpassword(eve){
+    console.log(eve);
+    console.log("Password Changed..!!");
+  }
+
+
 }
