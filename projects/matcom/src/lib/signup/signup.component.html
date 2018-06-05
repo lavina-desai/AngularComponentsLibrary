@@ -1,7 +1,7 @@
 <div style="text-align:center">
   
-    <mat-card> 
-        <form>
+  <mat-card>
+        <form  name="form"  novalidate>
     <h1>Registration</h1>
    
     <div class="example-container">
@@ -29,14 +29,14 @@
         <div class="example-container">
             <mat-form-field>
                
-                <input matInput placeholder="Enter your Password" [formControl]="password"  required>
+                <input matInput placeholder="Enter your Password" [formControl]="password" type="password" required>
                 <mat-error *ngIf="password.invalid">{{getErrorMessagePwd()}}</mat-error>
                 </mat-form-field>
           </div>
     
-          <button mat-raised-button color="primary">Register</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" >Register</button>
   </form>
-  </mat-card>
+</mat-card>
   
   </div>
   
