@@ -16,4 +16,13 @@ export class AppComponent {
     console.log("Successfully");  
   }
 
+  resetpassword(event){
+    console.log(event);
+    console.log("Password Chnabged ..!!"); 
+  }
+
+  forgetpassword(event){
+    console.log(event);
+    console.log("Message sent to Email"); 
+  }
 }
