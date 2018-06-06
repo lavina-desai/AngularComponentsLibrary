@@ -8,28 +8,24 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
 })
 export class SigninComponent  {
  
- onSubmit(){
-   console.log('SUCCESS!!!'); 
- }
+  email:string;
+  pass:string;
+  @Output() onSubmit = new EventEmitter()
 
-  form;
-
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required]);
-
-  //email
-getErrorMessage() {
-  return this.email.hasError('required') ? 'You must enter a valid Email' :
-      this.email.hasError('email') ? 'Not a valid email' :
-          '';
-}
-
-getErrorMessagePwd()
-{
-  return this.password.hasError('required') ? 'You must enter a password' :
-      this.password.hasError('password') ? 'Not a valid password' :
-          '';
-}
+  signInForm = new FormGroup({
+  email : new FormControl('', [Validators.required, Validators.email]),
+  pass : new FormControl('',Validators.required)
+  });
 
   constructor() { }
+
+  login(){
+    if (!this._validateForm()) return
+   this.onSubmit.emit(this.signInForm.value)
+ }
+
+private _validateForm() {
+    return this.signInForm.valid
+   }
+
 }

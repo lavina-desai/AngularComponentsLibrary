@@ -4,8 +4,9 @@ import { SignupModule } from './signup/signup.module';
 import { ResetpasswordModule } from './resetpassword/resetpassword.module';
 import { ForgetpasswordModule } from './forgetpassword/forgetpassword.module';
 import {SnackbarExampleModule } from './snackbar-example/snackbar-example.module';
-
+import { LoaderModule} from './loader/loader.module';
 import { SigninModule } from './signin/signin.module';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
@@ -14,15 +15,13 @@ import { SigninModule } from './signin/signin.module';
     SigninModule,
     ResetpasswordModule,
     ForgetpasswordModule,
-    SnackbarExampleModule
+    SnackbarExampleModule,
+    LoaderModule
+
   ],
 
   declarations: [MatcomComponent],
-
-
-  exports: [MatcomComponent, SignupModule,ResetpasswordModule, ForgetpasswordModule, SigninModule,SnackbarExampleModule]
-
-  
+  exports: [MatcomComponent, SignupModule,ResetpasswordModule, ForgetpasswordModule, SigninModule,SnackbarExampleModule,LoaderModule] 
 
 })
 

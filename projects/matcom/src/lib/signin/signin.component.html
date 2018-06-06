@@ -1,25 +1,39 @@
 <div style="text-align:center">
-
-  <mat-card>
-    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" nonvalidate>
+  <mat-card class = "mat-card">
+    <form [formGroup]="signInForm">
       <h1>Signin</h1>
 
       <div class="example-container">
         <mat-form-field>
-          <input matInput placeholder="Enter your email" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          <input matInput placeholder="Enter Email" formControlName="email" autocomplete="on" >
+          <mat-error *ngIf="signInForm.controls['email'].hasError('email')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="signInForm.controls['email'].hasError('required')">
+            Email is
+            <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
 
       <div class="example-container">
-        <mat-form-field>
-          <input matInput placeholder="Enter your Password" [formControl]="password" required>
-          <mat-error *ngIf="password.invalid">{{getErrorMessagePwd()}}</mat-error>
+        <mat-form-field class="input-field">
+          <input matInput placeholder="Enter Password" type="password" formControlName="pass" autocomplete="on">
+          <mat-error *ngIf="signInForm.controls['pass'].hasError('required')">
+            Password
+            <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
 
-      <button mat-raised-button color="primary">Submit</button>
-      <button mat-raised-button color="primary">Register</button>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="login()">Submit</button>
+        &nbsp;&nbsp;
+        <button mat-raised-button color="primary">Register</button>
+        <br>
+
+      </mat-card-actions>
+
     </form>
   </mat-card>
 
