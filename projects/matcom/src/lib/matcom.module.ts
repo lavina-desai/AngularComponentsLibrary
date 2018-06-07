@@ -6,7 +6,6 @@ import { ForgetpasswordModule } from './forgetpassword/forgetpassword.module';
 import {SnackbarExampleModule } from './snackbar-example/snackbar-example.module';
 import { LoaderModule} from './loader/loader.module';
 import { SigninModule } from './signin/signin.module';
-import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import { LoaderComponent } from './loader/loader.component';
     ForgetpasswordModule,
     SnackbarExampleModule,
     LoaderModule
-
   ],
 
   declarations: [MatcomComponent],

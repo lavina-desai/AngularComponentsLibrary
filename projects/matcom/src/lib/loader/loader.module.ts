@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from '../loader/loader.component';
 import { SharedMaterialModule } from '../shared-material/shared-material.module';
+import { LoaderService } from '../loader/loader.service';
 
 @NgModule({
   imports: [
@@ -9,6 +10,7 @@ import { SharedMaterialModule } from '../shared-material/shared-material.module'
     SharedMaterialModule
   ],
   declarations: [LoaderComponent ],
-  exports : [LoaderComponent ]
+  exports : [LoaderComponent ],
+  providers:[LoaderService]
 })
 export class LoaderModule { }
