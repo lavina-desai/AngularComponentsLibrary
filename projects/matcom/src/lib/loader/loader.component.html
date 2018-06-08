@@ -1,4 +1,4 @@
-<mat-card-content>
-  <mat-progress-spinner *ngIf="show"  class="spinner">
-  </mat-progress-spinner>
-</mat-card-content>
+
+<div class="lib-loader-backdrop" *ngIf="_loaderService.onLoaderStateChange() | async">
+  <mat-spinner class="lib-loader"></mat-spinner>
+</div>

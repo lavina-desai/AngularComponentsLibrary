@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
-import { MatcomModule } from './../../projects/matcom/src/lib/matcom.module';
+import { MatcomModule } from '../../projects/matcom/src/lib/matcom.module';
 
 @NgModule({
   declarations: [

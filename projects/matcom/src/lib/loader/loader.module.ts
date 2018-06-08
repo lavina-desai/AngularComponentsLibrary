@@ -10,7 +10,7 @@ import { LoaderService } from '../loader/loader.service';
     SharedMaterialModule
   ],
   declarations: [LoaderComponent ],
-  exports : [LoaderComponent ],
+  exports : [LoaderComponent],
   providers:[LoaderService]
 })
 export class LoaderModule { }
